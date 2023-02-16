@@ -1,3 +1,5 @@
+const core = require('@actions/core');
+const github = require('@actions/github');
 const fs = require('fs');
 
 try {
@@ -5,8 +7,7 @@ try {
     console.log(file);
   });
 
-  /* const core = require('@actions/core');
-  const github = require('@actions/github');
+
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
@@ -14,8 +15,8 @@ try {
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`); */
+  console.log(`The event payload: ${payload}`);
 } catch (error) {
   console.log(error.message);
-  /* core.setFailed(error.message); */
+  core.setFailed(error.message);
 }
