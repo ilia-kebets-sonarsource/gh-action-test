@@ -1,11 +1,12 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
 const fs = require('fs');
 
 try {
   fs.readdirSync(__dirname).forEach(file => {
     console.log(file);
   });
+
+  const core = require('@actions/core');
+  const github = require('@actions/github');
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
