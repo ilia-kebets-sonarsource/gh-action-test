@@ -4,7 +4,7 @@
   "description": "testing gh action implementation",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ncc build hello-world/index.js --license licenses.txt"
+    "build": "ncc build hello-world/index.js --license licenses.txt -o hello-world/dist/index.js"
   },
   "repository": {
     "type": "git",
